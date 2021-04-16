@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import BuyList from './containers/BuyList/BuyList';
 import Login from './containers/Login/Login';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
+//import { isMobileByAgent } from './util/detectMobileDevice';
 import { UserContext } from './util/userContext'
 
 const App = () => {
@@ -28,6 +29,8 @@ const App = () => {
             //cleanup
         }
     }, [])
+
+    //const isMobile = isMobileByAgent();
 
     return (
         <div className='app-wrapper'>
