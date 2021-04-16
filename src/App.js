@@ -4,7 +4,12 @@ import BuyList from './containers/BuyList/BuyList';
 import { UserContext } from './util/userContext'
 
 const App = props => {
-    const userInfo = {};
+    const userInfo = {
+        id: 1,
+        userName: 'emit',
+        firstName: 'emad',
+        lastName: 'armoun'
+    };
 
     return (
         <div className='app-wrapper'>
