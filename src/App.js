@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
+import BuyList from './containers/BuyList/BuyList';
 import { UserContext } from './util/userContext'
 
 const App = props => {
@@ -10,7 +11,7 @@ const App = props => {
             <BrowserRouter>
                 <Switch>
                     <UserContext.Provider value={userInfo}>
-                        {/* <Route exact path="/" component={BuyList} /> */}
+                        <Route exact path="/" component={BuyList} />
                     </UserContext.Provider>
                 </Switch>
             </BrowserRouter>
