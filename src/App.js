@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import BuyList from './containers/BuyList/BuyList';
 import Login from './containers/Login/Login';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
@@ -35,24 +35,24 @@ const App = () => {
     return (
         <div className='app-wrapper'>
             <BrowserRouter>
-                <Switch>
-                    <UserContext.Provider value={userInfo}>
-                        {
-                            isLoggedIn
-                            ? (
-                                <>
-                                    <Route exact path="/" component={BuyList} />
-                                    {/* <Route path="/other-path" component={OtherComponent} /> */}
-                                </>
-                            )
-                            : (
-                                <Route exact path="*" component={Login} />
-                            )
-                        }
-                        <Route path="/404" component={NotFoundPage} />
-                        <Redirect to="/404" />
-                    </UserContext.Provider>
-                </Switch>
+                <UserContext.Provider value={userInfo}>
+                {
+                    isLoggedIn
+                    ? (
+                        <Switch>
+                            <Route exact path="/" component={BuyList} />
+                            {/* <Route path="/other-path" component={OtherComponent} /> */}
+                            <Route path="/404" component={NotFoundPage} />
+                            <Route path="*" component={NotFoundPage} />
+                        </Switch>
+                    )
+                    : (
+                        <Switch>
+                            <Route exact path="*" component={Login} />
+                        </Switch>
+                    )
+                }
+                </UserContext.Provider>
             </BrowserRouter>
         </div>
     )
