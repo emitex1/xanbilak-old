@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
+import { BuyableItem } from '../../types/BuyableItem';
+import { BuyableItemsData } from './BuyableItemsData';
 
-const BuyList = (props: any) => {
-    const [items, setItems] = useState([]);
+const ShoppingList = (props: any) => {
+    const [items, setItems] = useState<BuyableItem[]>([]);
     
+    const readBuyItemsData = () => {
+        setItems(BuyableItemsData);
+    }
+
     useEffect(() => {
-        setItems([
-            { id: 1, title: "سیب" },
-            { id: 2, title: "دفتر یادداشت" },
-        ]);
+        readBuyItemsData();
 
         return () => {
             //cleanup
@@ -20,15 +23,19 @@ const BuyList = (props: any) => {
                 <input type='text' />
             </div>
             <div className='buy-list'>
+                <ul>
                 { items.map( (item:any, index: number) => {
                     return (
-                        <li key={item.id}>{item.title}</li>
+                        <li key={item.id}>
+                            {item.title}
+                        </li>
                     );
                 })}
+                </ul>
             </div>
             {/* <NavBar /> */}
         </div>
     )
 }
 
-export default BuyList;
+export default ShoppingList;

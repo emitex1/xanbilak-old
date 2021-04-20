@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import BuyList from './containers/BuyList/BuyList';
+import ShoppingList from './containers/ShoppingList/ShoppingList';
 import Login from './containers/Login/Login';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
 //import { isMobileByAgent } from './util/detectMobileDevice';
@@ -40,7 +40,7 @@ const App = () => {
                     isLoggedIn
                     ? (
                         <Switch>
-                            <Route exact path="/" component={BuyList} />
+                            <Route exact path="/" component={ShoppingList} />
                             {/* <Route path="/other-path" component={OtherComponent} /> */}
                             <Route path="/404" component={NotFoundPage} />
                             <Route path="*" component={NotFoundPage} />
