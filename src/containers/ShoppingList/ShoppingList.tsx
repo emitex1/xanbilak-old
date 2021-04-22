@@ -9,6 +9,10 @@ const ShoppingList = (props: any) => {
         setItems(BuyableItemsData);
     }
 
+    const buyClickHandle = (itemId: number) => {
+        //alert(itemId);
+    }
+
     useEffect(() => {
         readBuyItemsData();
 
@@ -27,6 +31,7 @@ const ShoppingList = (props: any) => {
                 { items.map( (item:any, index: number) => {
                     return (
                         <li key={item.id}>
+                            <input type='checkbox' onClick={e => buyClickHandle(item.id)} />
                             {item.title}
                         </li>
                     );
