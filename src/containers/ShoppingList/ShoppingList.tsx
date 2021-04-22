@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { BuyableItem } from '../../types/BuyableItem';
 import { BuyableItemsData } from './BuyableItemsData';
+import ShoppingItem from './ShoppingItem';
 
 const ShoppingList = (props: any) => {
     const [items, setItems] = useState<BuyableItem[]>([]);
@@ -28,14 +29,13 @@ const ShoppingList = (props: any) => {
             </div>
             <div className='buy-list'>
                 <ul>
-                { items.map( (item:any, index: number) => {
-                    return (
-                        <li key={item.id}>
-                            <input type='checkbox' onClick={e => buyClickHandle(item.id)} />
-                            {item.title}
-                        </li>
-                    );
-                })}
+                { items.map( (item:any, index: number) => 
+                    <ShoppingItem
+                        item={item}
+                        onClick={buyClickHandle}
+                        key={item.id}
+                    />
+                )}
                 </ul>
             </div>
             {/* <NavBar /> */}
