@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { BuyableItem } from '../../types/BuyableItem';
 import { BuyableItemsData } from './BuyableItemsData';
 import ShoppingItem from './ShoppingItem';
+import './ShoppingList.scss'
 
 const ShoppingList = (props: any) => {
     const [items, setItems] = useState<BuyableItem[]>([]);
@@ -27,7 +28,7 @@ const ShoppingList = (props: any) => {
             <div className='add-box'>
                 <input type='text' />
             </div>
-            <div className='buy-list'>
+            <div className='shopping-list'>
                 <ul>
                 { items.map( (item:any, index: number) => 
                     <ShoppingItem

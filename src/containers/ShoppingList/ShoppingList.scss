@@ -1,0 +1,22 @@
+.add-box {
+    background: #5d348a;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        padding: 7px 13px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        font-family: Vazir;
+    }
+}
+.shopping-list {
+    
+    ul {
+        list-style-type: none;
+        padding: 15px;
+    }
+}

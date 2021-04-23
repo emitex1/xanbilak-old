@@ -12,14 +12,14 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <li>
-            <div onClick={e => setIsOpen(!isOpen)}>
+        <li className='shopping-item'>
+            <div className='main-info' onClick={e => setIsOpen(!isOpen)}>
                 <input type='checkbox' onClick={e => onClick(id)} checked={isBought} />
                 {title}
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
-                <div>{createDate.toString()}</div>
                 <div>{description}</div>
+                <div>{createDate.toString()}</div>
             </div>
         </li>
     );

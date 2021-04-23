@@ -1,7 +1,20 @@
-.extra-info {
-    display: flex;
+.shopping-item {
+    margin-bottom: 5px;
 
-    &.is-collapse {
-        display: none;
+    .main-info {
+        background-color: #f5f3f7;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .extra-info {
+        display: flex;
+        flex-direction: column;
+        background-color: #edebf0;
+        padding: 5px;
+
+        &.is-collapse {
+            display: none;
+        }
     }
 }
