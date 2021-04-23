@@ -1,5 +1,6 @@
 import React from 'react'
 import { BuyableItem } from '../../types/BuyableItem'
+import './ShoppingItem.scss'
 
 interface inputProps {
     item:BuyableItem,
@@ -8,6 +9,7 @@ interface inputProps {
 
 const ShoppingItem = ({item, onClick}: inputProps) => {
     const {id, title, isBought, description, createDate} = item;
+    console.log(createDate);
     return (
         <li>
             <div >
@@ -15,7 +17,7 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
                 {title}
             </div>
             <div className='extra-info'>
-                {/* <div>{createDate}</div> */}
+                <div>{createDate.toString()}</div>
                 <div>{description}</div>
             </div>
         </li>
