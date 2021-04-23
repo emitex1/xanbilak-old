@@ -1,3 +1,7 @@
 .extra-info {
-    display: none;
+    display: flex;
+
+    &.is-collapse {
+        display: none;
+    }
 }

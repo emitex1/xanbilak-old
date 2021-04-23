@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BuyableItem } from '../../types/BuyableItem'
 import './ShoppingItem.scss'
 
@@ -9,14 +9,15 @@ interface inputProps {
 
 const ShoppingItem = ({item, onClick}: inputProps) => {
     const {id, title, isBought, description, createDate} = item;
-    console.log(createDate);
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <li>
-            <div >
+            <div onClick={e => setIsOpen(!isOpen)}>
                 <input type='checkbox' onClick={e => onClick(id)} />
                 {title}
             </div>
-            <div className='extra-info'>
+            <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div>{createDate.toString()}</div>
                 <div>{description}</div>
             </div>
