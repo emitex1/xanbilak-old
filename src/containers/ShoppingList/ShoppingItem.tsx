@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BuyableItem } from '../../types/BuyableItem'
 import './ShoppingItem.scss'
+import moment from 'moment-jalaali'
 
 interface inputProps {
     item:BuyableItem,
@@ -19,7 +20,8 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div>{description}</div>
-                <div>{createDate.toString()}</div>
+                <div>{moment(createDate).format('jYYYY/jM/jD')}</div>
+                <div>{moment(createDate).format('HH:mm:ss')}</div>
             </div>
         </li>
     );
