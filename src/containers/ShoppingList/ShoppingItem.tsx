@@ -14,7 +14,7 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
     return (
         <li>
             <div onClick={e => setIsOpen(!isOpen)}>
-                <input type='checkbox' onClick={e => onClick(id)} />
+                <input type='checkbox' onClick={e => onClick(id)} checked={isBought} />
                 {title}
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
