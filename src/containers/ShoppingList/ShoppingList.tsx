@@ -11,6 +11,21 @@ const ShoppingList = (props: any) => {
         setItems(BuyableItemsData);
     }
 
+    const addClickHandle = (e:any) => {
+        console.log(e.target.value);
+        if(e.charCode === 13) {
+            setItems([...items, {
+                id: 0,
+                title: e.target.value,
+                isBought: false,
+                description: "",
+                createDate: new Date(),
+                buyDate: undefined,
+            }])
+
+        }
+    }
+
     const buyClickHandle = (itemId: number) => {
         //alert(itemId);
     }
@@ -26,7 +41,7 @@ const ShoppingList = (props: any) => {
     return (
         <div className='page-wrapper'>
             <div className='add-box'>
-                <input type='text' />
+                <input type='text' onKeyPress={addClickHandle} />
             </div>
             <div className='shopping-list'>
                 <ul>
