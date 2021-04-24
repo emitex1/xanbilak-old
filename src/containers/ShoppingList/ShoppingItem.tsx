@@ -12,6 +12,8 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
     const {id, title, isBought, description, createDate} = item;
     const [isOpen, setIsOpen] = useState(false);
 
+    moment.loadPersian({dialect: 'persian-modern', usePersianDigits: true});
+
     return (
         <li className='shopping-item'>
             <div className='main-info' onClick={e => setIsOpen(!isOpen)}>
@@ -20,7 +22,7 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div>{description}</div>
-                <div>{moment(createDate).format('jYYYY/jM/jD')}</div>
+                <div>{moment(createDate).format('dddd، jD jMMMM jYYYY')}</div>
                 <div>{moment(createDate).format('HH:mm:ss')}</div>
             </div>
         </li>
