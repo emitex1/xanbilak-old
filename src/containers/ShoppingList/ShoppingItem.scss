@@ -17,6 +17,12 @@
             display: none;
         }
 
+        .description {
+            font-size: 13px;
+            color: #9f0126;
+            text-align: center;
+        }
+
         .date-and-time {
             display: flex;
             flex-direction: row;
@@ -31,7 +37,7 @@
 
             svg {
                 margin: 0px 5px;
-                fill: #1ccc00;
+                fill: #999999;
                 height: 1.5em;
                 width: 1.5em;
             }

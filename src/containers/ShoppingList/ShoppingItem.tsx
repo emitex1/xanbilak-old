@@ -23,7 +23,9 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
                 {title}
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
-                <div>{description}</div>
+                <div className='description'>
+                    {description}
+                </div>
                 <div className='date-and-time'>
                     <div>
                         <BiCalendarPlus className="abc" />
