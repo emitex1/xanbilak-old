@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { BuyableItem } from '../../types/BuyableItem'
 import './ShoppingItem.scss'
-import moment from 'moment-jalaali'
+import moment from 'moment-jalaali';
+import { BiCalendarPlus } from 'react-icons/bi';
+import { BiTimeFive } from 'react-icons/bi';
 
 interface inputProps {
     item:BuyableItem,
@@ -23,8 +25,14 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div>{description}</div>
                 <div className='date-and-time'>
-                    <div>{moment(createDate).format('dddd، jD jMMMM jYYYY')}</div>
-                    <div>{moment(createDate).format('HH:mm:ss')}</div>
+                    <div>
+                        <BiCalendarPlus className="abc" />
+                        {moment(createDate).format('dddd، jD jMMMM jYYYY')}
+                    </div>
+                    <div>
+                        <BiTimeFive />
+                        {moment(createDate).format('HH:mm:ss')}
+                    </div>
                 </div>
             </div>
         </li>
