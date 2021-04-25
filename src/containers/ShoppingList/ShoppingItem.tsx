@@ -22,8 +22,10 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div>{description}</div>
-                <div>{moment(createDate).format('dddd، jD jMMMM jYYYY')}</div>
-                <div>{moment(createDate).format('HH:mm:ss')}</div>
+                <div className='date-and-time'>
+                    <div>{moment(createDate).format('dddd، jD jMMMM jYYYY')}</div>
+                    <div>{moment(createDate).format('HH:mm:ss')}</div>
+                </div>
             </div>
         </li>
     );

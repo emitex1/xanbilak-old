@@ -16,5 +16,12 @@
         &.is-collapse {
             display: none;
         }
+
+        .date-and-time {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 11px;
+        }
     }
 }
