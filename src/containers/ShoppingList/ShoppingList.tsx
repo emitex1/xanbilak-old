@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
 import { BuyableItemsData } from './BuyableItemsData';
 import ShoppingItem from './ShoppingItem';
@@ -54,7 +55,7 @@ const ShoppingList = (props: any) => {
                 )}
                 </ul>
             </div>
-            {/* <NavBar /> */}
+            <NavBar />
         </div>
     )
 }
