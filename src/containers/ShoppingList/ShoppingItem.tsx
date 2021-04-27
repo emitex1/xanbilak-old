@@ -20,7 +20,12 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
         <li className='shopping-item'>
             <div className='main-info' onClick={e => setIsOpen(!isOpen)}>
                 <input type='checkbox' onClick={e => onClick(id)} checked={isBought} />
-                {title}
+                <span className='title'>
+                    {title.length > 30 && !isOpen
+                        ? title.substring(0,30) + '...'
+                        : title
+                    }
+                </span>
             </div>
             <div className={'extra-info' + (isOpen ? '' : ' is-collapse')}>
                 <div className='description'>
