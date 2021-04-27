@@ -28,7 +28,7 @@ const ShoppingList = (props: any) => {
         }
     }
 
-    const buyClickHandle = (itemId: number) => {
+    const shoppingItemCheckHandle = (itemId: number) => {
         //alert(itemId);
     }
 
@@ -51,7 +51,7 @@ const ShoppingList = (props: any) => {
                 { items.map( (item:any, index: number) => 
                     <ShoppingItem
                         item={item}
-                        onClick={buyClickHandle}
+                        onChange={shoppingItemCheckHandle}
                         key={item.id}
                     />
                 )}

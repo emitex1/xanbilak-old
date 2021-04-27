@@ -7,10 +7,10 @@ import { BiTimeFive } from 'react-icons/bi';
 
 interface inputProps {
     item:BuyableItem,
-    onClick: any
+    onChange: any
 }
 
-const ShoppingItem = ({item, onClick}: inputProps) => {
+const ShoppingItem = ({item, onChange}: inputProps) => {
     const {id, title, isBought, description, createDate} = item;
     const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +19,7 @@ const ShoppingItem = ({item, onClick}: inputProps) => {
     return (
         <li className='shopping-item'>
             <div className='main-info' onClick={e => setIsOpen(!isOpen)}>
-                <input type='checkbox' onClick={e => onClick(id)} checked={isBought} />
+                <input type='checkbox' onChange={e => onChange(id)} checked={isBought} />
                 <span className='title'>
                     {title.length > 30 && !isOpen
                         ? title.substring(0,30) + '...'
