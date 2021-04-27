@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import MainHeader from '../../components/MainHeader/MainHeader';
 import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
 import { BuyableItemsData } from './BuyableItemsData';
@@ -41,6 +42,7 @@ const ShoppingList = (props: any) => {
 
     return (
         <div className='page-wrapper'>
+            <MainHeader />
             <div className='add-box'>
                 <input type='text' onKeyPress={addClickHandle} />
             </div>
