@@ -1,13 +1,16 @@
 .add-box {
-    background: #5d348a;
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: fixed;
     top:0;
     left: 0;
+    box-sizing: border-box;
     width: 100%;
+    padding: 20px;
+
+    background: #8027b8;
 
     input {
         padding: 7px 13px;
@@ -19,7 +22,10 @@
 }
 
 .shopping-list {
-    height: calc(100% - 150px);
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 74px - 60px);
+    top: 74px;
     overflow: scroll;
     
     ul {
