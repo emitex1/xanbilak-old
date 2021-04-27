@@ -3,9 +3,8 @@
     align-items: center;
     justify-content: center;
 
-    position: fixed;
-    top:0;
-    left: 0;
+    position: sticky;
+    top: 0px;
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
@@ -22,7 +21,6 @@
 }
 
 .shopping-list {
-    position: absolute;
     width: 100%;
     height: calc(100% - 74px - 60px);
     top: 74px;
@@ -31,5 +29,6 @@
     ul {
         list-style-type: none;
         padding: 15px;
+        margin: 0px;
     }
 }
