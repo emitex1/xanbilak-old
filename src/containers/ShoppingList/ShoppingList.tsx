@@ -7,14 +7,16 @@ import ShoppingItem from './ShoppingItem';
 import './ShoppingList.scss'
 
 const ShoppingList = (props: any) => {
+    // Shopping Items
     const [items, setItems] = useState<BuyableItem[]>([]);
+    // add-box input reference
+    let titleInputRef: any;
     
-    const readBuyItemsData = () => {
+    const readShoppingItemsData = () => {
         setItems(BuyableItemsData);
     }
 
     const addClickHandle = (e:any) => {
-        console.log(e.target.value);
         if(e.charCode === 13) {
             setItems([...items, {
                 id: 0,
@@ -23,8 +25,10 @@ const ShoppingList = (props: any) => {
                 description: "",
                 createDate: new Date(),
                 buyDate: undefined,
-            }])
+            }]);
 
+            // Clear the add-box input
+            titleInputRef.value = "";
         }
     }
 
@@ -33,7 +37,7 @@ const ShoppingList = (props: any) => {
     }
 
     useEffect(() => {
-        readBuyItemsData();
+        readShoppingItemsData();
 
         return () => {
             //cleanup
@@ -44,7 +48,10 @@ const ShoppingList = (props: any) => {
         <div className='page-wrapper'>
             <MainHeader />
             <div className='add-box'>
-                <input type='text' onKeyPress={addClickHandle} />
+                <input type='text'
+                    onKeyPress={addClickHandle}
+                    ref={el => titleInputRef = el}
+                />
             </div>
             <div className='shopping-list'>
                 <ul>
