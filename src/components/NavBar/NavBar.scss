@@ -5,7 +5,7 @@
     bottom: 0px;
     width: 100%;
     height: 75px;
-    background-color: white;
+    background-image: linear-gradient(#fff, #dfdfdf);
 
     & > div {
         width: 33%;
@@ -13,6 +13,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid #ddd;
+    }
+
+    .massenger-icon {
+        width: 1.4em;
+        height: 1.4em;
+    }
+
+    .setting-icon {
+        width: 1.3em;
+        height: 1.3em;
     }
 }

@@ -1,17 +1,23 @@
 import React from 'react';
 import './NavBar.scss';
+import { IoMdSettings } from 'react-icons/io';
+import { TiMessages } from 'react-icons/ti';
+import { FaListOl } from 'react-icons/fa';
 
 const NavBar = () => {
     return (
         <div className='navbar'>
             <div>
-                لیست خرید
+                <span>لیست خرید</span>
+                <FaListOl className='list-icon' />
             </div>
             <div>
-                پیام رسان
+                <span>پیام رسان</span>
+                <TiMessages className='massenger-icon' />
             </div>
             <div>
-                خانواده
+                <span>تنظیمات</span>
+                <IoMdSettings className='setting-icon' />
             </div>
         </div>
     )
