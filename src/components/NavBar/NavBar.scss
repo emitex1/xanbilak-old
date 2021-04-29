@@ -6,6 +6,7 @@
     width: 100%;
     height: 75px;
     background-image: linear-gradient(#fff, #dfdfdf);
+    color: #777;
 
     & > div {
         width: 33%;
@@ -15,13 +16,19 @@
         align-items: center;
     }
 
+    .list-icon {
+        color: #920000;
+    }
+
     .massenger-icon {
         width: 1.4em;
         height: 1.4em;
+        color: #004b98;
     }
 
     .setting-icon {
         width: 1.3em;
         height: 1.3em;
+        color: #008c00;
     }
 }
