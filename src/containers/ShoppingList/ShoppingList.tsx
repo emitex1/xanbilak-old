@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
+import { getData } from '../../util/ApiTools';
 import { BuyableItemsData } from './BuyableItemsData';
 import ShoppingItem from './ShoppingItem';
 import './ShoppingList.scss'
@@ -12,7 +13,10 @@ const ShoppingList = (props: any) => {
     // add-box input reference
     let titleInputRef: any;
     
-    const readShoppingItemsData = () => {
+    const readShoppingItemsData = async () => {
+        const data = await getData("sic")
+        console.log(data && data.shopping_items_count);
+
         setItems(BuyableItemsData);
     }
 
