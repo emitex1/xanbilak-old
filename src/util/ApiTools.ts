@@ -1,8 +1,7 @@
-const apiBaseUrl: string = "http://localhost:800/";
-const apiVersion: string = "v1/";
+import { apiBaseUrl, apiVersion } from '../settings';
 
 export const getData = (apiAddress: string, baseUrl: string = apiBaseUrl, version: string = apiVersion) => {
-    return fetch(baseUrl + version + apiAddress, {
+    return fetch(baseUrl + '/' + version + '/' + apiAddress, {
         "method" : "get"
     }).then(
         response => response.json()
