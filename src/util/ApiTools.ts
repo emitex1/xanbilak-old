@@ -17,9 +17,9 @@ export const getData = (apiAddress: string, baseUrl: string = apiBaseUrl, versio
     });
 }
 
-export const sendData = (apiAddress: string, data: any, baseUrl: string = apiBaseUrl, version: string = apiVersion) => {
+export const sendData = (apiAddress: string, data: any, baseUrl: string = apiBaseUrl, version: string = apiVersion, httpMethod = 'POST') => {
     return fetch(baseUrl + '/' + version + '/' + apiAddress, {
-        "method" : "POST",
+        "method" : httpMethod, // POST Or PUT Or DELETE
         "headers": {
             "content-type": "application/json",
             "accept": "application/json"
