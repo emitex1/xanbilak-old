@@ -3,7 +3,6 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
 import { getData } from '../../util/ApiTools';
-import { BuyableItemsData } from './BuyableItemsData';
 import ShoppingItem from './ShoppingItem';
 import './ShoppingList.scss'
 
@@ -15,14 +14,11 @@ const ShoppingList = (props: any) => {
     
     const readShoppingItemsData = async () => {
         try {
-            const data = await getData("sic")
-            console.log('data=', data);
-            console.log("ready data", data && data.shopping_items_count);
-
-            setItems(BuyableItemsData);
+            const data = await getData("shoppingList")
+            setItems(data);
         }
         catch (err) {
-            console.log("Error in reading SIC :", err);
+            console.log("Error in reading shopping list :", err);
         }
     }
 
