@@ -14,10 +14,16 @@ const ShoppingList = (props: any) => {
     let titleInputRef: any;
     
     const readShoppingItemsData = async () => {
-        const data = await getData("sic")
-        console.log(data && data.shopping_items_count);
+        try {
+            const data = await getData("sic")
+            console.log('data=', data);
+            console.log("ready data", data && data.shopping_items_count);
 
-        setItems(BuyableItemsData);
+            setItems(BuyableItemsData);
+        }
+        catch (err) {
+            console.log("Error in reading SIC :", err);
+        }
     }
 
     const addClickHandle = (e:any) => {

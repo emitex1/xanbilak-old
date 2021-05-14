@@ -6,15 +6,28 @@ export const getData = (apiAddress: string, baseUrl: string = apiBaseUrl, versio
         "headers": {
             "accept": "application/json"
         },
-    }).then(
-        response => response.json()
-    )
-    .then( response => {
-        return response;
+    }).then(response => {
+        return {
+            response: response.json(),
+            status: response.status,
+            statusText: response.statusText
+        };
     })
-    .catch(err => {
-        console.error(err);
-    });
+    .then( async ({ response, status, statusText }) => {
+        switch(status) {
+            case 200:
+            case 201:
+            case 204:
+                return response;
+            default:
+                const data = await response;
+                //return "Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message')
+                throw new Error("Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message') );
+        }
+    })
+    /*.catch(err => {
+        console.error('Error in calling API: ', err);
+    });*/
 }
 
 export const sendData = (apiAddress: string, data: any, baseUrl: string = apiBaseUrl, version: string = apiVersion, httpMethod = 'POST') => {
@@ -25,13 +38,25 @@ export const sendData = (apiAddress: string, data: any, baseUrl: string = apiBas
             "accept": "application/json"
         },
         "body": JSON.stringify(data)
-    }).then(
-        response => response.json()
-    )
-    .then( response => {
-        return response;
+    }).then( response => {
+        return {
+            response: response.json(),
+            status: response.status,
+            statusText: response.statusText
+        };
     })
-    .catch(err => {
-        console.error(err);
-    });
+    .then( async ({ response, status, statusText }) => {
+        switch(status) {
+            case 200:
+            case 201:
+            case 204:
+                return response;
+            default:
+                const data = await response;
+                throw new Error("Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message') );
+        }
+    })
+    /*.catch(err => {
+        console.error('Error: ', err);
+    });*/
 }
