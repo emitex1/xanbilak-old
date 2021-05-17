@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
-import { getData } from '../../util/ApiTools';
+import { getData, sendData } from '../../util/ApiTools';
 import ShoppingItem from './ShoppingItem';
 import './ShoppingList.scss'
 
@@ -22,19 +22,27 @@ const ShoppingList = (props: any) => {
         }
     }
 
-    const addClickHandle = (e:any) => {
+    const createShoppingItem = async (title: string) => {
+        try {
+            const result = await sendData("shoppingItem/create", {
+                "title": title || "<No Title>"
+            });
+            //console.log(result);
+        }
+        catch (err) {
+            console.log("Error in creating shopping item :", err);
+        }
+    }
+
+    const addClickHandle = async (e:any) => {
         if(e.charCode === 13) {
-            setItems([...items, {
-                id: 0,
-                title: e.target.value,
-                isBought: false,
-                description: "",
-                createDate: new Date(),
-                buyDate: undefined,
-            }]);
+            await createShoppingItem(e.target.value);
 
             // Clear the add-box input
             titleInputRef.value = "";
+
+            // Read the new added item
+            readShoppingItemsData();
         }
     }
 
