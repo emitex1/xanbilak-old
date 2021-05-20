@@ -4,7 +4,7 @@ import ShoppingList from './containers/ShoppingList/ShoppingList';
 import Login from './containers/Login/Login';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
 //import { isMobileByAgent } from './util/detectMobileDevice';
-import { UserContext } from './util/userContext'
+import { UserContext } from './util/userContext';
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
