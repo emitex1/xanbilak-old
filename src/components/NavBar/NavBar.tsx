@@ -32,10 +32,10 @@ const NavBar = () => {
                     <FaListOl className='list-icon' />
                 </div>
             </Link>
-            <Link to={`/massenger`}>
+            <Link to={`/messenger`}>
                 <div>
-                    <span>{t("massenger")}</span>
-                    <TiMessages className='massenger-icon' />
+                    <span>{t("messenger")}</span>
+                    <TiMessages className='messenger-icon' />
                 </div>
             </Link>
             <Link to={`/settings`}>
