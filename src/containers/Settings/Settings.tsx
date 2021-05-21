@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import i18next from "i18next";
+import { useTranslation } from 'react-i18next';
 
 const Settings = () => {
     const [lang, setLang] = useState("فارسی");
+
+    const { t } = useTranslation();
 
     const changeLanguage = () => {
         const selected = localStorage.getItem("i18nextLng") || "en";
@@ -24,10 +27,10 @@ const Settings = () => {
     return (
         <div>
             <center>
-                <h2>Settings</h2>
+                <h2>{ t("settings") }</h2>
                 <hr />
 
-                <span>Language / زبان :</span>
+                <span>{ t("language") } :</span>
                 <br />
                 <button onClick={changeLanguage}>
                     {lang}
