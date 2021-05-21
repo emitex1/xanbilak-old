@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import './NavBar.scss';
@@ -25,18 +26,24 @@ const NavBar = () => {
 
     return (
         <div className='navbar'>
-            <div>
-                <span>{t("shopping_list")}</span>
-                <FaListOl className='list-icon' />
-            </div>
-            <div>
-                <span>{t("massenger")}</span>
-                <TiMessages className='massenger-icon' />
-            </div>
-            <div onClick={changeLanguage}>
-                <span>{t("settings")}</span>
-                <IoMdSettings className='setting-icon' />
-            </div>
+            <Link to={`/`}>
+                <div>
+                    <span>{t("shopping_list")}</span>
+                    <FaListOl className='list-icon' />
+                </div>
+            </Link>
+            <Link to={`/massenger`}>
+                <div>
+                    <span>{t("massenger")}</span>
+                    <TiMessages className='massenger-icon' />
+                </div>
+            </Link>
+            <Link to={`/settings`}>
+                <div>
+                    <span>{t("settings")}</span>
+                    <IoMdSettings className='setting-icon' />
+                </div>
+            </Link>
         </div>
     )
 }
