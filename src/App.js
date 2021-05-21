@@ -5,6 +5,8 @@ import Login from './containers/Login/Login';
 import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
 //import { isMobileByAgent } from './util/detectMobileDevice';
 import { UserContext } from './util/userContext';
+import Messenger from './containers/Messenger/Messenger';
+import Settings from './containers/Settings/Settings';
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,7 +43,8 @@ const App = () => {
                     ? (
                         <Switch>
                             <Route exact path="/" component={ShoppingList} />
-                            {/* <Route path="/other-path" component={OtherComponent} /> */}
+                            <Route exact path="/messenger" component={Messenger} />
+                            <Route exact path="/settings" component={Settings} />
                             <Route path="/404" component={NotFoundPage} />
                             <Route path="*" component={NotFoundPage} />
                         </Switch>
