@@ -6,3 +6,4 @@
 (B) npm i --save-dev \@types/moment-jalaali {cm:2021-05-22}
 (A) Add loading spinner
 (B) Convert remained JS files to TS files
+(A) Install toast component
