@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { toast } from 'react-toastify';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import NavBar from '../../components/NavBar/NavBar';
 import { BuyableItem } from '../../types/BuyableItem';
@@ -9,6 +10,7 @@ import './ShoppingList.scss'
 const ShoppingList = (props: any) => {
     // Shopping Items
     const [items, setItems] = useState<BuyableItem[]>([]);
+
     // add-box input reference
     let titleInputRef: any;
     
@@ -27,6 +29,7 @@ const ShoppingList = (props: any) => {
             const result = await sendData("shoppingItem/create", {
                 "title": title || "<No Title>"
             });
+            toast.success("«" + result.title + "» با موفقیت به لیست اضافه شد");
             //console.log(result);
         }
         catch (err) {

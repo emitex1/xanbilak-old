@@ -7,6 +7,8 @@ import NotFoundPage from './containers/NotFoundPage/NotFoundPage';
 import { UserContext } from './util/userContext';
 import Messenger from './containers/Messenger/Messenger';
 import Settings from './containers/Settings/Settings';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,23 +40,27 @@ const App = () => {
         <div className='app-wrapper'>
             <BrowserRouter>
                 <UserContext.Provider value={userInfo}>
-                {
-                    isLoggedIn
-                    ? (
-                        <Switch>
-                            <Route exact path="/" component={ShoppingList} />
-                            <Route exact path="/messenger" component={Messenger} />
-                            <Route exact path="/settings" component={Settings} />
-                            <Route path="/404" component={NotFoundPage} />
-                            <Route path="*" component={NotFoundPage} />
-                        </Switch>
-                    )
-                    : (
-                        <Switch>
-                            <Route exact path="*" component={Login} />
-                        </Switch>
-                    )
-                }
+                    {
+                        isLoggedIn
+                        ? (
+                            <Switch>
+                                <Route exact path="/" component={ShoppingList} />
+                                <Route exact path="/messenger" component={Messenger} />
+                                <Route exact path="/settings" component={Settings} />
+                                <Route path="/404" component={NotFoundPage} />
+                                <Route path="*" component={NotFoundPage} />
+                            </Switch>
+                        )
+                        : (
+                            <Switch>
+                                <Route exact path="*" component={Login} />
+                            </Switch>
+                        )
+                    }
+                    <ToastContainer
+                        rtl draggable closeOnClick position="bottom-center"
+                        className="toast-box"
+                    />
                 </UserContext.Provider>
             </BrowserRouter>
         </div>
