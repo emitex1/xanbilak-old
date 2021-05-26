@@ -10,11 +10,13 @@ import './ShoppingList.scss'
 const ShoppingList = (props: any) => {
     // Shopping Items
     const [items, setItems] = useState<BuyableItem[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     // add-box input reference
     let titleInputRef: any;
     
     const readShoppingItemsData = async () => {
+        setIsLoading(true);
         try {
             const data = await getData("shoppingList")
             setItems(data);
@@ -22,9 +24,11 @@ const ShoppingList = (props: any) => {
         catch (err) {
             console.log("Error in reading shopping list :", err);
         }
+        setIsLoading(false);
     }
 
     const createShoppingItem = async (title: string) => {
+        setIsLoading(true);
         try {
             const result = await sendData("shoppingItem/create", {
                 "title": title || "<No Title>"
@@ -35,6 +39,7 @@ const ShoppingList = (props: any) => {
         catch (err) {
             console.log("Error in creating shopping item :", err);
         }
+        setIsLoading(false);
     }
 
     const addClickHandle = async (e:any) => {
@@ -72,7 +77,13 @@ const ShoppingList = (props: any) => {
             </div>
             <div className='shopping-list'>
                 <ul>
-                { items.map( (item:any, index: number) => 
+                { isLoading ? (
+                    <span>Is Loading ...</span>
+                )
+                : items.length === 0 ? (
+                    <span>No Items in list</span>
+                )
+                : items.map( (item:any, index: number) => 
                     <ShoppingItem
                         item={item}
                         onChange={shoppingItemCheckHandle}
