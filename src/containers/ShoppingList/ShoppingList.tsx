@@ -6,6 +6,7 @@ import { BuyableItem } from '../../types/BuyableItem';
 import { getData, sendData } from '../../util/ApiTools';
 import ShoppingItem from './ShoppingItem';
 import './ShoppingList.scss'
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const ShoppingList = (props: any) => {
     // Shopping Items
@@ -78,7 +79,7 @@ const ShoppingList = (props: any) => {
             <div className='shopping-list'>
                 <ul>
                 { isLoading ? (
-                    <span>Is Loading ...</span>
+                    <LoadingSpinner />
                 )
                 : items.length === 0 ? (
                     <span>No Items in list</span>
