@@ -7,10 +7,11 @@ const Messenger = () => {
 
     return (
         <div>
-            <center>
+            <div style={{textAlign: 'center'}}>
                 <h2>{ t("messenger") }</h2>
                 <h3>{ t("comming_soon") }</h3>
-            </center>
+            </div>
+
             <NavBar />
         </div>
     )

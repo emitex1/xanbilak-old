@@ -26,7 +26,7 @@ const Settings = () => {
 
     return (
         <div>
-            <center>
+            <div style={{textAlign: 'center'}}>
                 <h2>{ t("settings") }</h2>
                 <hr />
 
@@ -35,7 +35,8 @@ const Settings = () => {
                 <button onClick={changeLanguage}>
                     {lang}
                 </button>
-            </center>
+            </div>
+
             <NavBar />
         </div>
     )
