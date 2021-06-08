@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export const relativeDateTime = (timestamp: any) => {
     /* print datetime return Today else print the date.*/
-    let dateString;
+    let dateString: string;
     const datetime = timestamp && timestamp.toDate();
     const days = moment().diff(datetime, 'days');
     const midnight = new Date();
@@ -23,19 +23,19 @@ export const relativeDateTime = (timestamp: any) => {
     return dateString;
 };
 
-export const convertToLongDate = (date) => {
+export const convertToLongDate = (date: string) => {
     const dateObject = new Date(date);
-    var month = ["January", "February", "March", "April", "May", "June",
+    const month = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"][dateObject.getMonth()];
-    var formattedStr = month + ' ' + dateObject.getDay() + ', ' + dateObject.getFullYear();
+    const formattedStr = month + ' ' + dateObject.getDay() + ', ' + dateObject.getFullYear();
     return formattedStr;
 }
 
-export const convertToLongDate2 = (date) => {
+export const convertToLongDate2 = (date: string) => {
     const dateObject = new Date(date);
-    var month = ["January", "February", "March", "April", "May", "June",
+    const month = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"][dateObject.getMonth()];
-    var formattedStr = dateObject.getDay() + ' ' + month + ' ' + dateObject.getFullYear();
+    const formattedStr = dateObject.getDay() + ' ' + month + ' ' + dateObject.getFullYear();
     return formattedStr;
 }
 
