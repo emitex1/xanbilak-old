@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import i18next from "i18next";
 import { useTranslation } from 'react-i18next';
+import './Settings.scss';
 
 const Settings = () => {
     const [lang, setLang] = useState("فارسی");
@@ -25,8 +26,8 @@ const Settings = () => {
     }
 
     return (
-        <div>
-            <div style={{textAlign: 'center'}}>
+        <div className="page-wrapper">
+            <div className="settings-box">
                 <h2>{ t("settings") }</h2>
                 <hr />
 
