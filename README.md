@@ -15,13 +15,6 @@ This is a utility which helps people in shopping. All of the family members can 
 * TypeScript
 * Node.js
 
-## Usage:
-* `npm run start`
-
-or
-
-* `yarn start`
-
 ## Developer:
 
 **Emad Armoun**
