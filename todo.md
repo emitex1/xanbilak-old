@@ -4,5 +4,11 @@
 (B) Show error message if no item reads from API
 (B) npm i --save-dev \@types/moment-jalaali {cm:2021-05-22}
 (A) Add loading spinner {cm:2021-05-27}
-(B) Convert remained JS files to TS files
+(B) Convert remained JS files to TS & TSX files
 (A) Install toast component {cm:2021-05-24}
+(B) Use <React.StrictMode> in root
+(A) use SWR or MediaQuery for Caching
+(B) use Context & Reducer
+(B) use Loadash
+(B) use Memo & Callable
+(A) use Github Action to auto deploy it to Github Pages
