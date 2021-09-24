@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userInfo, setUserInfo] = useState(null)
+    const [userInfo, setUserInfo] = useState<any>(null)
 
     const checkLogin = () => {
         const userInfoResult = {
