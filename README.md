@@ -14,6 +14,8 @@ This is a utility which helps people in shopping. All of the family members can 
 * React.js
 * TypeScript
 * Node.js
+* Jest
+* Socket.io
 
 ## Developer:
 
