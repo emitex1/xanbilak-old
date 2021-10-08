@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/xanbilak/static/css/main.742478f4.chunk.css",
+    "main.js": "/xanbilak/static/js/main.cd36220c.chunk.js",
+    "main.js.map": "/xanbilak/static/js/main.cd36220c.chunk.js.map",
+    "runtime-main.js": "/xanbilak/static/js/runtime-main.2b40a75b.js",
+    "runtime-main.js.map": "/xanbilak/static/js/runtime-main.2b40a75b.js.map",
+    "static/css/2.70420525.chunk.css": "/xanbilak/static/css/2.70420525.chunk.css",
+    "static/js/2.64215e29.chunk.js": "/xanbilak/static/js/2.64215e29.chunk.js",
+    "static/js/2.64215e29.chunk.js.map": "/xanbilak/static/js/2.64215e29.chunk.js.map",
+    "index.html": "/xanbilak/index.html",
+    "static/css/2.70420525.chunk.css.map": "/xanbilak/static/css/2.70420525.chunk.css.map",
+    "static/css/main.742478f4.chunk.css.map": "/xanbilak/static/css/main.742478f4.chunk.css.map",
+    "static/js/2.64215e29.chunk.js.LICENSE.txt": "/xanbilak/static/js/2.64215e29.chunk.js.LICENSE.txt",
+    "static/media/logo-white.38a3a261.png": "/xanbilak/static/media/logo-white.38a3a261.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b40a75b.js",
+    "static/css/2.70420525.chunk.css",
+    "static/js/2.64215e29.chunk.js",
+    "static/css/main.742478f4.chunk.css",
+    "static/js/main.cd36220c.chunk.js"
+  ]
+}
