@@ -1,4 +1,4 @@
-export default {
+module.export = {
     "env": {
         "browser": true,
         "es2021": true
@@ -15,7 +15,7 @@ export default {
          */
         "plugin:prettier/recommended"
     ],
-    "parser": "@typescript-eslint/parser",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
