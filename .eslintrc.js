@@ -30,21 +30,21 @@ export default {
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-newline": "error",
-        "array-bracket-spacing": "error",
+        'array-bracket-spacing': ['error', 'never'], // Prevent inner space in bracket []
         "array-callback-return": "error",
         "array-element-newline": "error",
         "arrow-body-style": "error",
         "arrow-parens": "error",
-        "arrow-spacing": "error",
+        "arrow-spacing": "error", // Add Space before or after arrow sign (=>)
         "block-scoped-var": "error",
         "block-spacing": "error",
-        "brace-style": "error",
+        "brace-style": "error", // Place brace symbol right after the last keyword, instead of the next line
         "camelcase": "error",
         "capitalized-comments": "error",
         "class-methods-use-this": "error",
-        "comma-dangle": "error",
-        "comma-spacing": "error",
-        "comma-style": "error",
+        "comma-dangle": ["error", 'always-multiline'], // Add a comma after the last item of a multiline list
+        'comma-spacing': ['error', { 'before': false, 'after': true }], // Add space only afte commas, not before
+        "comma-style": ["error", "last"], // Where to place comma, in a multiline list (last / first)
         "complexity": "error",
         "computed-property-spacing": "error",
         "consistent-return": "error",
@@ -70,29 +70,29 @@ export default {
         "id-length": "error",
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
-        "indent": "error",
+        "indent": ["error", 2], // Define the indent size
         "init-declarations": "error",
         "jsx-quotes": "error",
         "key-spacing": "error",
-        "keyword-spacing": "error",
+        "keyword-spacing": "error", // Add Space before or after keywords (if, else, ...)
         "line-comment-position": "error",
         "linebreak-style": "error",
         "lines-around-comment": "error",
         "lines-between-class-members": "error",
         "max-classes-per-file": "error",
         "max-depth": "error",
-        "max-len": "error",
+        "max-len": ["error", { "code": 80 }], // Define max length for a code line
         "max-lines": "error",
         "max-lines-per-function": "error",
         "max-nested-callbacks": "error",
         "max-params": "error",
         "max-statements": "error",
         "max-statements-per-line": "error",
-        "multiline-comment-style": "error",
+        "multiline-comment-style": ["error", "starred-block"], // Enforce to use star style comment (/* * <comment1> * <comment2> */), instead of consecutive single line comment or bare-block comment (/* <comment> */)
         "multiline-ternary": "error",
         "new-cap": "error",
         "new-parens": "error",
-        "newline-per-chained-call": "error",
+        "newline-per-chained-call": "error", // Need a new line for each chained call
         "no-alert": "error",
         "no-array-constructor": "error",
         "no-await-in-loop": "error",
@@ -130,7 +130,7 @@ export default {
         "no-multi-assign": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
-        "no-multiple-empty-lines": "error",
+        'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 1 }], // Prevent consecutive empty lines
         "no-negated-condition": "error",
         "no-nested-ternary": "error",
         "no-new": "error",
@@ -181,7 +181,7 @@ export default {
         "no-whitespace-before-property": "error",
         "nonblock-statement-body-position": "error",
         "object-curly-newline": "error",
-        "object-curly-spacing": "error",
+        'object-curly-spacing': ['error', 'always'], // Add inner space in braces {}
         "object-property-newline": "error",
         "object-shorthand": "error",
         "one-var": "error",
@@ -209,19 +209,28 @@ export default {
         "require-await": "error",
         "require-unicode-regexp": "error",
         "rest-spread-spacing": "error",
-        "semi": "error",
-        "semi-spacing": "error",
+        "semi": ["error", "always"], // End each statement with a semi-colon
+        "semi-spacing": "error", // No extra space between semicolon & previous text
         "semi-style": "error",
+        "no-extra-semi": "error", // No extra semicolon at the end of each statement
+        "no-unexpected-multiline": "error", // Not allow multilines which make ambiguity
         "sort-imports": "error",
         "sort-keys": "error",
         "sort-vars": "error",
-        "space-before-blocks": "error",
-        "space-before-function-paren": "error",
-        "space-in-parens": "error",
-        "space-infix-ops": "error",
+        "space-before-blocks": "error", // Add space before blocks (before brace symbol "{" )
+        "space-before-function-paren": [ // Add a space before parenthesis in anonymous or arrow functions, but not in named functions
+            'error', 
+            { 
+              'anonymous': 'always', 
+              'named': 'never', 
+              'asyncArrow': 'always', 
+            },
+        ],
+        'space-in-parens': ['error', 'never'], // Prevent inner space in parenthesis ()
+        "space-infix-ops": "error", // Add spaces before and after inline operators
         "space-unary-ops": "error",
-        "spaced-comment": "error",
-        "strict": "error",
+        "spaced-comment": ["error", "always"], // Add a space after single comment sign (//) and before comment text
+        "strict": ["error", "global"], // Use Strict mode, (means define every variable before use)
         "switch-colon-spacing": "error",
         "symbol-description": "error",
         "template-curly-spacing": "error",
