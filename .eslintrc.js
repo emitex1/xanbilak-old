@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true
@@ -13,14 +13,15 @@ module.export = {
          * This will display prettier errors as ESLint errors. Make sure
          * this is always the last configuration in the extends array.
          */
-        "plugin:prettier/recommended"
+        //"plugin:prettier/recommended"
     ],
+    "ignorePatterns": [".eslintrc.js"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12,
+        "ecmaVersion": 2020,
         "sourceType": "module"
     },
     "plugins": [
@@ -30,9 +31,9 @@ module.export = {
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-newline": "error",
-        'array-bracket-spacing': ['error', 'never'], // Prevent inner space in bracket []
+        "array-bracket-spacing": ["error", "never"],
         "array-callback-return": "error",
-        "array-element-newline": "error",
+        //"array-element-newline": "error",
         "arrow-body-style": "error",
         "arrow-parens": "error",
         "arrow-spacing": "error", // Add Space before or after arrow sign (=>)
@@ -42,8 +43,8 @@ module.export = {
         "camelcase": "error",
         "capitalized-comments": "error",
         "class-methods-use-this": "error",
-        "comma-dangle": ["error", 'always-multiline'], // Add a comma after the last item of a multiline list
-        'comma-spacing': ['error', { 'before': false, 'after': true }], // Add space only afte commas, not before
+        "comma-dangle": ["error", "always-multiline"], // Add a comma after the last item of a multiline list
+        "comma-spacing": ["error", { "before": false, "after": true }], // Add space only afte commas, not before
         "comma-style": ["error", "last"], // Where to place comma, in a multiline list (last / first)
         "complexity": "error",
         "computed-property-spacing": "error",
@@ -76,7 +77,7 @@ module.export = {
         "key-spacing": "error",
         "keyword-spacing": "error", // Add Space before or after keywords (if, else, ...)
         "line-comment-position": "error",
-        "linebreak-style": "error",
+        "linebreak-style": ["error", "windows"],
         "lines-around-comment": "error",
         "lines-between-class-members": "error",
         "max-classes-per-file": "error",
@@ -130,7 +131,7 @@ module.export = {
         "no-multi-assign": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
-        'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 1 }], // Prevent consecutive empty lines
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }], // Prevent consecutive empty lines
         "no-negated-condition": "error",
         "no-nested-ternary": "error",
         "no-new": "error",
@@ -156,7 +157,7 @@ module.export = {
         "no-shadow": "error",
         "no-tabs": "error",
         "no-template-curly-in-string": "error",
-        "no-ternary": "error",
+        //"no-ternary": "error",
         "no-throw-literal": "error",
         "no-trailing-spaces": "error",
         "no-undef-init": "error",
@@ -181,10 +182,10 @@ module.export = {
         "no-whitespace-before-property": "error",
         "nonblock-statement-body-position": "error",
         "object-curly-newline": "error",
-        'object-curly-spacing': ['error', 'always'], // Add inner space in braces {}
+        "object-curly-spacing": ["error", "always"], // Add inner space in braces {}
         "object-property-newline": "error",
         "object-shorthand": "error",
-        "one-var": "error",
+        //"one-var": "error",
         "one-var-declaration-per-line": "error",
         "operator-assignment": "error",
         "operator-linebreak": "error",
@@ -203,7 +204,7 @@ module.export = {
         "prefer-spread": "error",
         "prefer-template": "error",
         "quote-props": "error",
-        "quotes": "error",
+        "quotes": ["error", "double"],
         "radix": "error",
         "require-atomic-updates": "error",
         "require-await": "error",
@@ -214,19 +215,19 @@ module.export = {
         "semi-style": "error",
         "no-extra-semi": "error", // No extra semicolon at the end of each statement
         "no-unexpected-multiline": "error", // Not allow multilines which make ambiguity
-        "sort-imports": "error",
-        "sort-keys": "error",
+        //"sort-imports": "error",
+        //"sort-keys": "error",
         "sort-vars": "error",
         "space-before-blocks": "error", // Add space before blocks (before brace symbol "{" )
         "space-before-function-paren": [ // Add a space before parenthesis in anonymous or arrow functions, but not in named functions
-            'error', 
+            "error", 
             { 
-              'anonymous': 'always', 
-              'named': 'never', 
-              'asyncArrow': 'always', 
+              "anonymous": "always", 
+              "named": "never", 
+              "asyncArrow": "always", 
             },
         ],
-        'space-in-parens': ['error', 'never'], // Prevent inner space in parenthesis ()
+        "space-in-parens": ["error", "never"], // Prevent inner space in parenthesis ()
         "space-infix-ops": "error", // Add spaces before and after inline operators
         "space-unary-ops": "error",
         "spaced-comment": ["error", "always"], // Add a space after single comment sign (//) and before comment text
