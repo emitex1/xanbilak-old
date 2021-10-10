@@ -1,62 +1,104 @@
-import { apiBaseUrl, apiVersion } from '../settings';
+import { apiBaseUrl, apiVersion } from "../settings";
 
-export const getData = (apiAddress: string, baseUrl: string = apiBaseUrl, version: string = apiVersion) => {
-    return fetch(baseUrl + '/' + version + '/' + apiAddress, {
-        "method" : "GET",
-        "headers": {
-            "accept": "application/json"
-        },
-    }).then(response => {
-        return {
-            response: response.json(),
-            status: response.status,
-            statusText: response.statusText
-        };
-    })
-    .then( async ({ response, status, statusText }) => {
-        switch(status) {
-            case 200:
-            case 201:
-            case 204:
-                return response;
-            default:
-                const data = await response;
-                //return "Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message')
-                throw new Error("Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message') );
-        }
-    })
-    /*.catch(err => {
-        console.error('Error in calling API: ', err);
-    });*/
-}
+const SUCCESS = 200;
+const SUCCESS1 = 201;
+const SUCCESS4 = 204;
+const NO_ERROR_MESSAGE = "No error message";
 
-export const sendData = (apiAddress: string, data: any, baseUrl: string = apiBaseUrl, version: string = apiVersion, httpMethod = 'POST') => {
-    return fetch(baseUrl + '/' + version + '/' + apiAddress, {
-        "method" : httpMethod, // POST Or PUT Or DELETE
-        "headers": {
-            "content-type": "application/json",
-            "accept": "application/json"
-        },
-        "body": JSON.stringify(data)
-    }).then( response => {
-        return {
-            response: response.json(),
-            status: response.status,
-            statusText: response.statusText
-        };
-    })
-    .then( async ({ response, status, statusText }) => {
-        switch(status) {
-            case 200:
-            case 201:
-            case 204:
-                return response;
-            default:
-                const data = await response;
-                throw new Error("Error " + status + " : " + (data && data.message ? data.message : statusText ? statusText : 'No error message') );
-        }
-    })
-    /*.catch(err => {
-        console.error('Error: ', err);
-    });*/
-}
+export const getData = (
+  apiAddress: string, baseUrl: string = apiBaseUrl,
+  version: string = apiVersion) => fetch(
+  `${baseUrl}/${version}/${apiAddress}`,
+  {
+    "method": "GET",
+    "headers": {
+      "accept": "application/json",
+    },
+  },
+).then((response) => ({
+  response: response.json(),
+  status: response.status,
+  statusText: response.statusText,
+}))
+  .then(async ({ response, status, statusText }) => {
+
+    switch (status) {
+
+    case SUCCESS:
+    case SUCCESS1:
+    case SUCCESS4:
+      return response;
+    default:
+      // eslint-disable-next-line no-case-declarations
+      const data = await response;
+
+      /*
+       * X return "Error " + status + " : " +
+       * (data && data.message ? data.message : statusText
+       *    ? statusText : 'No error message')
+       */
+
+      // eslint-disable-next-line no-nested-ternary
+      throw new Error(`Error ${status} : ${data && data.message
+        ? data.message
+        : statusText
+          ? statusText
+          : NO_ERROR_MESSAGE}`);
+
+    }
+
+  });
+
+/*
+ * .catch(err => {
+ *      console.error('Error in calling API: ', err);
+ *  });
+ */
+
+export const sendData = (
+  apiAddress: string, data: any, baseUrl: string = apiBaseUrl,
+  // eslint-disable-next-line max-len
+  version: string = apiVersion, httpMethod = "POST") => fetch(
+  `${baseUrl}/${version}/${apiAddress}`,
+  {
+    // POST Or PUT Or DELETE
+    "method": httpMethod,
+    "headers": {
+      "content-type": "application/json",
+      "accept": "application/json",
+    },
+    "body": JSON.stringify(data),
+  },
+).then((response) => ({
+  response: response.json(),
+  status: response.status,
+  statusText: response.statusText,
+}))
+  .then(async ({ response, status, statusText }) => {
+
+    switch (status) {
+
+    case SUCCESS:
+    case SUCCESS1:
+    case SUCCESS4:
+      return response;
+    default:
+      // eslint-disable-next-line no-case-declarations
+      const data2 = await response;
+      throw new Error(`Error ${status} : ${
+        // eslint-disable-next-line no-nested-ternary
+        data2 && data2.message
+          ? data2.message
+          : statusText
+            ? statusText
+            : NO_ERROR_MESSAGE}`);
+
+    }
+
+  });
+
+/*
+ * .catch(err => {
+ *      console.error('Error: ', err);
+ *  });
+ */

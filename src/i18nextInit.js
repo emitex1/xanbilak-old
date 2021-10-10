@@ -10,10 +10,10 @@ const availableLanguages = ["en", "fa"];
 
 const resources = {
   en: {
-    translation: translationEN
+    translation: translationEN,
   },
   fa: {
-    translation: translationFA
+    translation: translationFA,
   },
 };
 
@@ -26,7 +26,7 @@ i18n
     fallbackLng,
 
     detection: {
-      checkWhitelist: true
+      checkWhitelist: true,
     },
 
     debug: false,
@@ -34,9 +34,8 @@ i18n
     whitelist: availableLanguages,
 
     interpolation: {
-      escapeValue: false
-    }
-  }
-);
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
