@@ -34,6 +34,7 @@ const App = () => {
 
     checkLogin();
     // X return () => {}
+
   }, []);
 
   const mainRoutes = () => (
