@@ -13,3 +13,6 @@
 (B) use Memo & Callable
 (A) use Github Action to auto deploy it to Github Pages
 (A) define type for user info in app.tsx
+(A) Fix ESLint errors
+(A) Delete package-lock.json file
+(B) Install json-server
