@@ -1,8 +1,9 @@
 import { apiBaseUrl, apiVersion } from "../settings";
 
-const SUCCESS = 200;
-const SUCCESS1 = 201;
-const SUCCESS4 = 204;
+const SUCCESS_OK = 200;
+const SUCCESS_CREATED = 201;
+const SUCCESS_ACCEPTED = 202;
+const SUCCESS_NO_CONTENT = 204;
 const NO_ERROR_MESSAGE = "No error message";
 
 export const getData = (
@@ -24,9 +25,10 @@ export const getData = (
 
     switch (status) {
 
-    case SUCCESS:
-    case SUCCESS1:
-    case SUCCESS4:
+    case SUCCESS_OK:
+    case SUCCESS_CREATED:
+    case SUCCESS_ACCEPTED:
+    case SUCCESS_NO_CONTENT:
       return response;
     default:
       // eslint-disable-next-line no-case-declarations
@@ -78,9 +80,10 @@ export const sendData = (
 
     switch (status) {
 
-    case SUCCESS:
-    case SUCCESS1:
-    case SUCCESS4:
+    case SUCCESS_OK:
+    case SUCCESS_CREATED:
+    case SUCCESS_ACCEPTED:
+    case SUCCESS_NO_CONTENT:
       return response;
     default:
       // eslint-disable-next-line no-case-declarations
