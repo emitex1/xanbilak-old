@@ -1,3 +1,4 @@
+/* eslint-disable max-params */
 import { apiBaseUrl, apiVersion } from "../settings";
 
 const SUCCESS_OK = 200;
@@ -8,7 +9,8 @@ const NO_ERROR_MESSAGE = "No error message";
 
 export const getData = (
   apiAddress: string, baseUrl: string = apiBaseUrl,
-  version: string = apiVersion) => fetch(
+  version: string = apiVersion,
+): any => fetch(
   `${baseUrl}/${version}/${apiAddress}`,
   {
     "method": "GET",
@@ -60,7 +62,8 @@ export const getData = (
 export const sendData = (
   apiAddress: string, data: any, baseUrl: string = apiBaseUrl,
   // eslint-disable-next-line max-len
-  version: string = apiVersion, httpMethod = "POST") => fetch(
+  version: string = apiVersion, httpMethod = "POST",
+): any => fetch(
   `${baseUrl}/${version}/${apiAddress}`,
   {
     // POST Or PUT Or DELETE

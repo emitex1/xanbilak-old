@@ -1,16 +1,21 @@
-export const decreaseArraySize = (arr: any, amount: number = 1) => {
-    const arr2: any = [];
-    for (let i: number = 0; i < arr.length - amount; i++) {
-        arr2.push(arr[i]);
-    }
-    return arr2;
+const DEFAULT_SIZE = 1;
+
+// eslint-disable-next-line max-len
+export const decreaseArraySize = (arr: any, amount: number = DEFAULT_SIZE): any[] => {
+
+  const arr2: any = [];
+  for (let index: number = 0; index < arr.length - amount; index++) {
+
+    arr2.push(arr[index]);
+
+  }
+  return arr2;
+
 };
 
-export const convertToKeyValue = (arr: any) => {
-    return arr.map( (item: any, index: number) => {
-        return {
-            key: index,
-            value: item
-        };
-    });
-};
+export const convertToKeyValue = (arr: any[]): any[] => (
+  arr.map((item: any, index: number) => ({
+    key: index,
+    value: item,
+  }))
+);

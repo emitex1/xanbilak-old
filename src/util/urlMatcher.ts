@@ -1,2 +1,3 @@
-const urlRegex = /(https?:\/\/[^\s]+)/g;
-export const linkify = (text: any) => (text.match(urlRegex) || []);
+// eslint-disable-next-line prefer-named-capture-group
+const urlRegex = /(https?:\/\/[^\s]+)/ug;
+export const linkify = (text: any): any[] => (text.match(urlRegex) || []);
