@@ -15,7 +15,7 @@ module.exports = {
          */
         //"plugin:prettier/recommended"
     ],
-    "ignorePatterns": [".eslintrc.js"],
+    "ignorePatterns": [".eslintrc.js", "**/*.tsx"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
