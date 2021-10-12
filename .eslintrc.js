@@ -15,7 +15,7 @@ module.exports = {
          */
         //"plugin:prettier/recommended"
     ],
-    "ignorePatterns": [".eslintrc.js", "**/*.tsx"],
+    "ignorePatterns": [".eslintrc.js", "node_modules/*"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -90,7 +90,7 @@ module.exports = {
         "max-statements": "error",
         "max-statements-per-line": "error",
         "multiline-comment-style": ["error", "starred-block"], // Enforce to use star style comment (/* * <comment1> * <comment2> */), instead of consecutive single line comment or bare-block comment (/* <comment> */)
-        "multiline-ternary": "error",
+        //"multiline-ternary": "error",
         "new-cap": "error",
         "new-parens": "error",
         "newline-per-chained-call": "error", // Need a new line for each chained call
@@ -202,7 +202,7 @@ module.exports = {
         "prefer-regex-literals": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
-        "prefer-template": "error",
+        //"prefer-template": "error",
         //"quote-props": "error",
         "quotes": ["error", "double"],
         "radix": "error",
