@@ -1,21 +1,24 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next';
-import NavBar from '../../components/NavBar/NavBar';
-import './Messenger.scss';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import NavBar from "../../components/NavBar/NavBar";
+import "./Messenger.scss";
 
-const Messenger = () => {
-    const { t } = useTranslation();
+const Messenger = (): JSX.Element => {
 
-    return (
-        <div className="page-wrapper">
-            <div className="messenger-box" style={{textAlign: 'center'}}>
-                <h2>{ t("messenger") }</h2>
-                <h3>{ t("comming_soon") }</h3>
-            </div>
+  // eslint-disable-next-line id-length
+  const { t } = useTranslation();
 
-            <NavBar />
-        </div>
-    )
-}
+  return (
+    <div className="page-wrapper">
+      <div className="messenger-box" style={{ textAlign: "center" }}>
+        <h2>{ t("messenger") }</h2>
+        <h3>{ t("comming_soon") }</h3>
+      </div>
 
-export default Messenger
+      <NavBar />
+    </div>
+  );
+
+};
+
+export default Messenger;

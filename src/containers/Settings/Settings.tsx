@@ -1,46 +1,54 @@
-import React, {useState} from 'react'
-import NavBar from '../../components/NavBar/NavBar'
+import React, { useState } from "react";
+import NavBar from "../../components/NavBar/NavBar";
 import i18next from "i18next";
-import { useTranslation } from 'react-i18next';
-import './Settings.scss';
+import { useTranslation } from "react-i18next";
+import "./Settings.scss";
 
-const Settings = () => {
-    const [lang, setLang] = useState("فارسی");
+const Settings = (): JSX.Element => {
 
-    const { t } = useTranslation();
+  const [lang, setLang] = useState("فارسی");
 
-    const changeLanguage = () => {
-        const selected = localStorage.getItem("i18nextLng") || "en";
-        if(selected === "en") {
-            localStorage.setItem("i18nextLng", "fa");
-            i18next.changeLanguage("fa");
-            console.log("fa");
-            setLang("فارسی");
-        }
-        else {
-            localStorage.setItem("i18nextLng", "en");
-            i18next.changeLanguage("en");
-            console.log("en");
-            setLang("English");
-        }
+  // eslint-disable-next-line id-length
+  const { t } = useTranslation();
+
+  const changeLanguage = () => {
+
+    const selected = localStorage.getItem("i18nextLng") || "en";
+    if (selected === "en") {
+
+      localStorage.setItem("i18nextLng", "fa");
+      i18next.changeLanguage("fa");
+      // X console.log("fa");
+      setLang("فارسی");
+
+    } else {
+
+      localStorage.setItem("i18nextLng", "en");
+      i18next.changeLanguage("en");
+      // X console.log("en");
+      setLang("English");
+
     }
 
-    return (
-        <div className="page-wrapper">
-            <div className="settings-box">
-                <h2>{ t("settings") }</h2>
-                <hr />
+  };
 
-                <span>{ t("language") } :</span>
-                <br />
-                <button onClick={changeLanguage}>
-                    {lang}
-                </button>
-            </div>
+  return (
+    <div className="page-wrapper">
+      <div className="settings-box">
+        <h2>{ t("settings") }</h2>
+        <hr />
 
-            <NavBar />
-        </div>
-    )
-}
+        <span>{ t("language") } :</span>
+        <br />
+        <button onClick={changeLanguage}>
+          {lang}
+        </button>
+      </div>
 
-export default Settings
+      <NavBar />
+    </div>
+  );
+
+};
+
+export default Settings;

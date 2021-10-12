@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -7,13 +7,18 @@ display: block;
 margin: 0 auto;
 border-color: #AE00FF;
 `;
-//console.log(override);
+// X console.log(override);
 
-
-const LoadingSpinner = ({color = "#FFFFFF", size=40}) => {
-    return (
-        <ClipLoader color={color} loading={true} css={override} size={size} />
-    )
+interface LoadingSpinnerPropTypes {
+  color: string;
+  size: number;
 }
 
-export default LoadingSpinner
+const SPINNER_SIZE = 40;
+
+const LoadingSpinner = ({ color = "#FFFFFF",
+  size = SPINNER_SIZE }: LoadingSpinnerPropTypes): JSX.Element => (
+  <ClipLoader color={color} loading={true} css={override} size={size} />
+);
+
+export default LoadingSpinner;
