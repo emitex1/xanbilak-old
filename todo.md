@@ -16,4 +16,4 @@
 (A) Fix ESLint errors
 (A) Delete package-lock.json file
 (B) Install json-server
-(A) npx browserslist@latest --update-db
+(A) npx browserslist@latest --update-db {cm:2021-10-15}
