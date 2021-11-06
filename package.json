@@ -39,7 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch",
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
