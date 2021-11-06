@@ -17,3 +17,6 @@
 (A) Delete package-lock.json file
 (B) Install json-server
 (A) npx browserslist@latest --update-db {cm:2021-10-15}
+(A) Install jest
+(A) Install Enzyme
+(A) Write 1st test file
