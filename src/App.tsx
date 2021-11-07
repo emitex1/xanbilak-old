@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
 
   // X const isMobile = isMobileByAgent();
   return (
-    <div className="app-wrapper">
+    <div className="app-wrapper" data-test="app-wrapper">
       <BrowserRouter>
         <UserContext.Provider value={userInfo}>
           {isLoggedIn

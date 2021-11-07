@@ -12,3 +12,12 @@ test("wrapper should be there", () => {
   expect(wrapper.exists()).toBe(true);
 
 });
+
+test("only 1 wrapper should be there", () => {
+
+  const wrapper = shallow(<App />);
+  const appComponent = wrapper.find("[data-test='app-wrapper']");
+  // eslint-disable-next-line no-magic-numbers
+  expect(appComponent.length).toBe(1);
+
+});
